@@ -136,9 +136,9 @@
       - name: Manage disks
         ovirt_disk:
           auth: "{{ ovirt_auth }}"
-          name: "{{ item.name }}"
+          name: "{{ item.name | madatory }}"
+          size: "{{ item.size | madatory }}"
           vm_name: "{{ vm_name }}"
-          size: "{{ item.size | default(omit) }}"
           format: "{{ item.format | default(template_disk_format) | default(omit) }}"
           storage_domain: "{{ item.storage_domain | default(template_disk_storage) | default(omit) }}"
           interface: "{{ item.interface | default(template_disk_interface) | default(omit) }}"

@@ -70,8 +70,8 @@ The `template_disks` List of dictionaries can contain following attributes:
 
 | Name               | Default value  |                                              |
 |--------------------|----------------|----------------------------------------------|
-| size               | UNDEF          | The size of the additional disk. |
-| name               | UNDEF          | The name of the additional disk.  |
+| size               | UNDEF (Required)          | The size of the additional disk. |
+| name               | UNDEF (Required)          | The name of the additional disk.  |
 the disk will be looked up by id and will update name of the disk if it differs from the name passed in name parameter. |
 | storage_domain     | UNDEF          | The name of storage domain where disk should be created.  If no value is passed, value is set by <i>template_disk_storage</i>. |
 | interface          | UNDEF          | The interface of the disk.  If no value is passed, value is set by <i>template_disk_interface</i>. |
