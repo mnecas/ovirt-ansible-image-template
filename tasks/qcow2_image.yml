@@ -140,12 +140,12 @@
       - name: Manage disks
         ovirt_disk:
           auth: "{{ ovirt_auth }}"
-          name: "{{ item.name | madatory }}"
-          size: "{{ item.size | madatory }}"
+          name: "{{ item.name | default(omit) }}"
+          size: "{{ item.size | default(omit) }}"
+          interface: "{{ item.interface | default(template_disk_interface) | default(omit) }}"
           vm_name: "{{ vm_name }}"
           format: "{{ item.format | default(template_disk_format) | default(omit) }}"
           storage_domain: "{{ item.storage_domain | default(template_disk_storage) | default(omit) }}"
-          interface: "{{ item.interface | default(template_disk_interface) | default(omit) }}"
           bootable: "{{ item.bootable | default(omit) }}"
           wait: true
         loop: "{{ template_disks }}"
