@@ -41,7 +41,7 @@ Role Variables
 
 | Name               | Default value         |                            |
 |--------------------|-----------------------|----------------------------|
-| qcow_url           | UNDEF (mandatory if glance is not used)                | The URL of the QCOW2 image. You can specify file with prefix 'file://'. |
+| qcow_url           | UNDEF (mandatory if glance is not used)                | The URL of the QCOW2 image. You can specify  local file with prefix 'file://'. |
 | qcow_url_client_cert | UNDEF               | Path to client certificate if needed for retrieving QCOW from authenticated site. |
 | qcow_url_client_key | UNDEF                | Path to client key if needed for retrieving QCOW from authenticated site. |
 | image_path         | /tmp/                 | Path where the QCOW2 image will be downloaded to. If directory the base name of the URL on the remote server will be used. |
