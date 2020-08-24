@@ -119,7 +119,7 @@
           creates: "{{ tmp_private_key_file }}"
         when: template_prerequisites_tasks is defined
 
-      - name: Get SHH key
+      - name: Get SSH key
         command: "cat {{ tmp_private_key_file~'.pub' }}"
         register: key_resp
         when: template_prerequisites_tasks is defined
